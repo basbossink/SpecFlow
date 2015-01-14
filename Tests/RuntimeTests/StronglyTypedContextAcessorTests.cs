@@ -126,6 +126,18 @@ namespace TechTalk.SpecFlow.RuntimeTests
             Assert.AreSame(expected, actual);
         }
 
+		[Test]
+		public void Can_get_null_according_to_generic_type_and_string()
+		{
+			var scenarioContext = CreateScenarioContext();
+			string expected = null;
+			scenarioContext.Set(expected,"test");
+
+			var actual = scenarioContext.Get<string>("test");
+
+			Assert.AreSame(expected, actual);
+		}
+
         [Test]
         public void Can_retrieve_existing_value_with_try_get_value()
         {
